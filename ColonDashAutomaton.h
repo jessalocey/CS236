@@ -3,8 +3,7 @@
 
 #include "Automaton.h"
 
-class ColonDashAutomaton : public Automaton
-{
+class ColonDashAutomaton : public Automaton {
 private:
     void S1(const std::string& input);
 

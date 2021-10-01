@@ -5,9 +5,9 @@
 class Automaton
 {
 protected:
-    int inputRead = 0;
-    int newLines = 0;
-    int index = 0;
+    unsigned int inputRead = 0;
+    unsigned int newLines = 0;
+    unsigned int index = 0;
     TokenType type;
 
 public:
@@ -17,7 +17,9 @@ public:
 
     Automaton(TokenType type) { this->type = type; }
 
-    // Start the automaton and return the number of characters read
+    virtual ~Automaton() {}
+
+    // Start the automaton and return the number of characters read.
     //   read == 0 indicates the input was rejected
     //   read  > 0 indicates the input was accepted
     int Start(const std::string& input) {

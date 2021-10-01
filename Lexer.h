@@ -9,18 +9,20 @@ class Lexer
 private:
     std::vector<Automaton*> automata;
     std::vector<Token*> tokens;
+    Automaton* maxAutomaton = NULL;
+    unsigned int inputRead;
+    unsigned int maxRead;
+    unsigned int lineNumber;
 
     void CreateAutomata();
-
-    // TODO: add any other private methods here (if needed)
 
 public:
     Lexer();
     ~Lexer();
 
     void Run(std::string& input);
-    
-    // TODO: add other public methods here
+    std::string toString();
+    std::vector<Token*> getTokenVector();
 
 };
 
